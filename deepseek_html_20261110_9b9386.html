@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO & Social Meta -->
+  <title>Apex International Academy | Excellence in Education & Leadership</title>
+  <meta name="description" content="Apex International Academy offers world-class academic programs, distinguished faculty, and a vibrant campus. Explore courses, faculty, notices, and admissions.">
+  <meta name="keywords" content="college, academy, higher education, courses, faculty, admissions, notices, Apex International">
+  <meta name="author" content="Apex International Academy">
+  <meta property="og:title" content="Apex International Academy | Excellence in Education">
+  <meta property="og:description" content="Empowering minds, shaping futures. Discover our academic programs, faculty, and vibrant campus.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Tailwind (utility classes for rapid styling) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 800: '#1e293b', 900: '#0f172a', 950: '#090d16' },
+            gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom smooth scroll & base */
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { font-family: 'Inter', sans-serif; }
+    .glass-header { background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(12px); }
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%), 
+                  url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover; background-position: center;
+    }
+    .notice-pulse { animation: pulse-ring 2s infinite; }
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    }
+    /* Line clamp for uniform text */
+    .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    /* Transition for cards */
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen selection:bg-gold-500 selection:text-white">
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="glass-header text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Brand -->
+        <a href="#" class="flex items-center space-x-3 group">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-gold-600 to-gold-400 flex items-center justify-center text-navy-900 shadow-lg font-black text-2xl group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <span class="text-xl font-extrabold tracking-tight block text-white group-hover:text-gold-400 transition-colors font-heading">APEX ACADEMY</span>
+            <span class="text-xs text-gold-400 font-medium tracking-widest uppercase">Excellence & Leadership</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex space-x-1 lg:space-x-2" aria-label="Main navigation">
+          <a href="#home" class="px-3 py-2 rounded-lg text-sm font-medium text-white hover:text-gold-400 hover:bg-slate-800/60 transition-all">Home</a>
+          <a href="#programs" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-gold-400 hover:bg-slate-800/60 transition-all">Programs</a>
+          <a href="#notices" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-gold-400 hover:bg-slate-800/60 transition-all">Notices</a>
+          <a href="#faculty" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-gold-400 hover:bg-slate-800/60 transition-all">Faculty</a>
+          <a href="#contact" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-gold-400 hover:bg-slate-800/60 transition-all">Contact</a>
+        </nav>
+
+        <!-- CTA & Mobile Toggle -->
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="hidden md:inline-block bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-bold px-5 py-2.5 rounded-lg text-sm shadow-md hover:from-gold-400 hover:to-gold-500 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+            Apply Now
+          </a>
+          <button id="mobile-menu-btn" type="button" class="md:hidden text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-400" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-navy-900 px-4 pt-3 pb-6 space-y-2">
+      <a href="#home" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-white hover:bg-slate-800 hover:text-gold-400">Home</a>
+      <a href="#programs" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-gold-400">Programs</a>
+      <a href="#notices" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-gold-400">Notices</a>
+      <a href="#faculty" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-gold-400">Faculty</a>
+      <a href="#contact" class="mobile-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-gold-400">Contact</a>
+      <div class="pt-2">
+        <a href="#contact" class="mobile-link block w-full text-center bg-gold-500 text-navy-900 font-bold px-4 py-3 rounded-lg shadow-md hover:bg-gold-400">Apply Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero-gradient text-white relative py-24 md:py-36 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/20 border border-gold-400/30 text-gold-400 text-sm font-semibold mb-6 animate-bounce">
+          <i class="fa-solid fa-star text-xs"></i> Admissions Open for Academic Year 2026-2027
+        </span>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight max-w-4xl font-heading">
+          Empowering Minds, <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-amber-300">Shaping Futures</span>
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
+          At Apex International Academy, we foster academic excellence, character building, and innovation to prepare tomorrow's global leaders.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 w-full justify-center sm:w-auto">
+          <a href="#programs" class="px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-bold rounded-xl shadow-xl hover:from-gold-400 hover:to-gold-500 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2">
+            <span>Explore Programs</span> <i class="fa-solid fa-arrow-right text-sm"></i>
+          </a>
+          <a href="#contact" class="px-8 py-4 bg-slate-800/80 hover:bg-slate-700/90 border border-slate-600 text-white font-semibold rounded-xl backdrop-blur-sm transition-all flex items-center justify-center gap-2">
+            <span>Contact Admissions</span> <i class="fa-solid fa-envelope text-sm"></i>
+          </a>
+        </div>
+        <!-- Stats Ticker -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-4xl border-t border-slate-700/60 pt-10">
+          <div class="p-4 rounded-xl bg-slate-900/40 backdrop-blur-sm"><p class="text-3xl md:text-4xl font-extrabold text-gold-400">100%</p><p class="text-xs sm:text-sm text-slate-300 mt-1 font-medium">Graduation Rate</p></div>
+          <div class="p-4 rounded-xl bg-slate-900/40 backdrop-blur-sm"><p class="text-3xl md:text-4xl font-extrabold text-gold-400">45+</p><p class="text-xs sm:text-sm text-slate-300 mt-1 font-medium">Expert Faculty</p></div>
+          <div class="p-4 rounded-xl bg-slate-900/40 backdrop-blur-sm"><p class="text-3xl md:text-4xl font-extrabold text-gold-400">15</p><p class="text-xs sm:text-sm text-slate-300 mt-1 font-medium">Advanced Programs</p></div>
+          <div class="p-4 rounded-xl bg-slate-900/40 backdrop-blur-sm"><p class="text-3xl md:text-4xl font-extrabold text-gold-400">2,500+</p><p class="text-xs sm:text-sm text-slate-300 mt-1 font-medium">Active Students</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IMPORTANT NOTICES ===== -->
+    <section id="notices" class="py-20 bg-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+          <div>
+            <div class="flex items-center gap-2 text-gold-600 font-bold tracking-wider text-sm uppercase">
+              <span class="w-3 h-3 rounded-full bg-gold-500 inline-block notice-pulse"></span> Announcements Hub
+            </div>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mt-2 font-heading">Important School Notices</h2>
+          </div>
+          <!-- Search -->
+          <div class="mt-4 md:mt-0 relative w-full md:w-72">
+            <input type="text" id="notice-search" placeholder="Search notices..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-navy-800 focus:border-transparent transition-all shadow-sm" aria-label="Search notices">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+          </div>
+        </div>
+        <div id="notices-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dynamic Notice Cards Inserted via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COURSES / PROGRAMS ===== -->
+    <section id="programs" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-gold-600 font-bold tracking-wider text-sm uppercase">Curriculum Pathways</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mt-2 font-heading">Academic Programs & Courses</h2>
+          <p class="mt-4 text-slate-600 text-base">Explore our comprehensive streams designed to ignite curiosity, critical thinking, and career readiness.</p>
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap justify-center gap-2 mt-8" id="course-filters">
+            <button class="course-filter-btn active px-5 py-2 rounded-full text-sm font-semibold transition-all bg-navy-900 text-white shadow-md" data-category="all">All Programs</button>
+            <button class="course-filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200" data-category="science">Science & Tech</button>
+            <button class="course-filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200" data-category="management">Management</button>
+            <button class="course-filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200" data-category="humanities">Humanities</button>
+          </div>
+        </div>
+        <div id="courses-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Dynamic Course Cards Inserted via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FACULTY & STAFF ===== -->
+    <section id="faculty" class="py-20 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-gold-400 font-bold tracking-wider text-sm uppercase">Educators & Mentors</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 font-heading">Meet Our Distinguished Staff</h2>
+          <p class="mt-4 text-slate-300 text-base">Our faculty members are dedicated scholars committed to inspiring and guiding every student.</p>
+          <!-- Staff Filters -->
+          <div class="flex flex-wrap justify-center gap-2 mt-8" id="staff-filters">
+            <button class="staff-filter-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-gold-500 text-navy-900 shadow-md" data-dept="all">All Staff</button>
+            <button class="staff-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="Administration">Administration</button>
+            <button class="staff-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="Science">Science Dept</button>
+            <button class="staff-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="Computer Science">Computer Science</button>
+            <button class="staff-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="Humanities">Humanities</button>
+          </div>
+        </div>
+        <div id="staff-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Dynamic Staff Cards Inserted via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT & ADMISSIONS ===== -->
+    <section id="contact" class="py-20 bg-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <!-- Contact Info -->
+          <div class="lg:col-span-5 bg-navy-900 text-white p-8 md:p-10 rounded-2xl shadow-xl flex flex-col justify-between">
+            <div>
+              <span class="text-gold-400 font-bold tracking-wider text-sm uppercase">Get In Touch</span>
+              <h2 class="text-3xl font-extrabold text-white mt-2 mb-6 font-heading">Contact & Inquiries</h2>
+              <p class="text-slate-300 text-sm leading-relaxed mb-8">Have questions about our programs, admission process, or campus visits? Reach out to us directly or send a message through the form.</p>
+              <div class="space-y-6">
+                <div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-slate-800 text-gold-400 flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot"></i></div><div><h4 class="text-sm font-bold text-white uppercase tracking-wider">Campus Address</h4><p class="text-slate-300 text-sm mt-0.5">125 Academy Way, Knowledge Heights, NY 10001</p></div></div>
+                <div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-slate-800 text-gold-400 flex items-center justify-center shrink-0"><i class="fa-solid fa-phone"></i></div><div><h4 class="text-sm font-bold text-white uppercase tracking-wider">Phone Numbers</h4><p class="text-slate-300 text-sm mt-0.5">+1 (555) 234-5678 / +1 (555) 987-6543</p></div></div>
+                <div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-slate-800 text-gold-400 flex items-center justify-center shrink-0"><i class="fa-solid fa-envelope"></i></div><div><h4 class="text-sm font-bold text-white uppercase tracking-wider">Email Contact</h4><p class="text-slate-300 text-sm mt-0.5">admissions@apexacademy.edu</p></div></div>
+                <div class="flex items-start gap-4"><div class="w-10 h-10 rounded-lg bg-slate-800 text-gold-400 flex items-center justify-center shrink-0"><i class="fa-solid fa-clock"></i></div><div><h4 class="text-sm font-bold text-white uppercase tracking-wider">Office Hours</h4><p class="text-slate-300 text-sm mt-0.5">Mon - Fri: 8:00 AM - 4:30 PM</p></div></div>
+              </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-slate-800 flex items-center gap-4">
+              <span class="text-xs text-slate-400">Follow us:</span>
+              <div class="flex gap-3 text-slate-300">
+                <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold-500 hover:text-navy-900 flex items-center justify-center transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold-500 hover:text-navy-900 flex items-center justify-center transition-all" aria-label="Twitter"><i class="fa-brands fa-x-twitter text-xs"></i></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold-500 hover:text-navy-900 flex items-center justify-center transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold-500 hover:text-navy-900 flex items-center justify-center transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram text-xs"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Contact Form -->
+          <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-slate-200">
+            <h3 class="text-2xl font-bold text-navy-900 mb-2 font-heading">Send Us a Message</h3>
+            <p class="text-slate-600 text-sm mb-6">Fill out the form below and our admissions team will get back to you within 24 hours.</p>
+            <div id="form-feedback" class="hidden mb-6 p-4 rounded-xl text-sm font-medium"></div>
+            <form id="contact-form" novalidate class="space-y-5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div><label for="full-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Full Name *</label><input type="text" id="full-name" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-800 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none transition-all text-sm" placeholder="John Doe"><p class="text-xs text-red-500 mt-1 hidden" id="err-name">Please enter your full name.</p></div>
+                <div><label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Email Address *</label><input type="email" id="email" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-800 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none transition-all text-sm" placeholder="johndoe@example.com"><p class="text-xs text-red-500 mt-1 hidden" id="err-email">Please enter a valid email address.</p></div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div><label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone Number</label><input type="tel" id="phone" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-800 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none transition-all text-sm" placeholder="+1 (555) 000-0000"></div>
+                <div><label for="interest" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Interested Program *</label><select id="interest" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-800 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none transition-all text-sm bg-white"><option value="">Select a program</option><option value="science">Physics & Science Stream</option><option value="cs">Computer Science & AI</option><option value="management">Business Administration</option><option value="humanities">Liberal Arts & Humanities</option><option value="general">General Inquiry</option></select><p class="text-xs text-red-500 mt-1 hidden" id="err-interest">Please select an option.</p></div>
+              </div>
+              <div><label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Message *</label><textarea id="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-800 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none transition-all text-sm resize-none" placeholder="Write your inquiry or question here..."></textarea><p class="text-xs text-red-500 mt-1 hidden" id="err-message">Message must be at least 10 characters.</p></div>
+              <button type="submit" class="w-full py-4 bg-navy-900 hover:bg-slate-800 text-gold-400 font-bold rounded-xl shadow-lg transition-all text-sm tracking-wider uppercase flex items-center justify-center gap-2"><i class="fa-solid fa-paper-plane"></i><span>Submit Inquiry</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-navy-950 text-slate-400 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <a href="#" class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-lg bg-gold-500 flex items-center justify-center text-navy-900 font-extrabold text-xl"><i class="fa-solid fa-graduation-cap"></i></div>
+            <span class="text-lg font-bold text-white tracking-tight">APEX ACADEMY</span>
+          </a>
+          <p class="text-slate-400 text-xs leading-relaxed mb-4">Providing world-class holistic education, encouraging academic brilliance, integrity, and lifelong learning for future global innovators.</p>
+          <p class="text-xs text-slate-500">&copy; 2026 Apex International Academy. All rights reserved.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4 border-b border-slate-800 pb-2">Quick Navigation</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#home" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+            <li><a href="#notices" class="hover:text-gold-400 transition-colors">Important Notices</a></li>
+            <li><a href="#programs" class="hover:text-gold-400 transition-colors">Academic Programs</a></li>
+            <li><a href="#faculty" class="hover:text-gold-400 transition-colors">Faculty Directory</a></li>
+            <li><a href="#contact" class="hover:text-gold-400 transition-colors">Admissions & Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4 border-b border-slate-800 pb-2">Top Programs</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#programs" class="hover:text-gold-400 transition-colors">Advanced Physics & Math</a></li>
+            <li><a href="#programs" class="hover:text-gold-400 transition-colors">Computer Science & AI</a></li>
+            <li><a href="#programs" class="hover:text-gold-400 transition-colors">Business Administration</a></li>
+            <li><a href="#programs" class="hover:text-gold-400 transition-colors">English Literature & Arts</a></li>
+            <li><a href="#programs" class="hover:text-gold-400 transition-colors">Biotechnology & Chemistry</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4 border-b border-slate-800 pb-2">Academy Newsletter</h4>
+          <p class="text-xs text-slate-400 mb-3">Subscribe to receive regular updates on academic schedules, news, and events.</p>
+          <form onsubmit="event.preventDefault();" class="space-y-2">
+            <input type="email" placeholder="Your email address" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs text-white focus:outline-none focus:border-gold-500">
+            <button type="submit" class="w-full py-2 bg-gold-500 hover:bg-gold-400 text-navy-900 font-bold rounded-lg text-xs uppercase tracking-wider transition-colors">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== NOTICE DETAIL MODAL ===== -->
+  <div id="notice-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity">
+    <div class="bg-white rounded-2xl max-w-xl w-full p-6 md:p-8 shadow-2xl relative transform transition-all scale-95" id="modal-card">
+      <button id="close-modal" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modal-tag" class="inline-block text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider bg-gold-100 text-gold-700 mb-3">Urgent</div>
+      <h3 id="modal-title" class="text-2xl font-bold text-navy-900 mb-2 font-heading">Notice Title</h3>
+      <p id="modal-date" class="text-xs text-slate-500 mb-4 flex items-center gap-2"><i class="fa-regular fa-calendar"></i> <span>Date: --</span></p>
+      <div id="modal-body" class="text-slate-600 text-sm leading-relaxed space-y-3 mb-6"></div>
+      <div class="flex justify-end"><button id="modal-ok-btn" class="px-5 py-2.5 bg-navy-900 text-white font-semibold rounded-xl text-sm hover:bg-slate-800">Close</button></div>
+    </div>
+  </div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ---------- DATA ----------
+    const noticesData = [
+      { id: 1, title: "Annual Science & Tech Fair 2026", category: "Events", date: "Nov 15, 2026", badgeClass: "bg-blue-100 text-blue-800", summary: "Students from all grades are invited to register their science projects and innovations for the upcoming annual exhibition.", details: "The Annual Science & Tech Fair will take place in the Main Auditorium. Registration forms must be submitted to the Science Department by November 10th. Prizes will be awarded for top innovations in Physics, Chemistry, and Software Development." },
+      { id: 2, title: "Mid-Term Examination Schedule Released", category: "Academic", date: "Nov 12, 2026", badgeClass: "bg-amber-100 text-amber-800", summary: "The official timetable for the Fall 2026 mid-term examinations is now available on the student portal and bulletin board.", details: "Exams will commence on November 25th. All students are requested to clear any pending tuition dues and collect their admit cards from the administration office before November 20th. Strict adherence to exam hall regulations is required." },
+      { id: 3, title: "Parent-Teacher Conference Invitation", category: "Important", date: "Nov 08, 2026", badgeClass: "bg-red-100 text-red-800", summary: "Parents are warmly invited to discuss student progress, attendance, and quarterly evaluations with class instructors.", details: "The conference will be held from 9:00 AM to 3:00 PM on Saturday. Appointments can be scheduled through the portal to avoid queue times. Light refreshments will be served at the cafeteria." },
+      { id: 4, title: "Winter Sports Tournament Registration", category: "Sports", date: "Nov 05, 2026", badgeClass: "bg-emerald-100 text-emerald-800", summary: "Sign-ups are open for basketball, soccer, chess, and track events for the inter-house championship.", details: "Tryouts will begin next Monday after school hours. Interested athletes should collect health clearance forms from the Physical Education department." },
+      { id: 5, title: "Guest Seminar on Artificial Intelligence", category: "Workshop", date: "Nov 02, 2026", badgeClass: "bg-purple-100 text-purple-800", summary: "Dr. Elena Vance from Tech Institute will deliver a keynote speech on the future of generative AI and career paths.", details: "The seminar is mandatory for Grade 11 & 12 Computer Science students. Seats for other departments are available on a first-come, first-served basis in Hall B." }
+    ];
+
+    const coursesData = [
+      { id: "c1", title: "Advanced Physics & Quantum Basics", category: "science", duration: "2 Academic Years", prereq: "GPA 3.5 in High School Math", icon: "fa-atom", description: "Deep dive into classical mechanics, thermodynamics, electromagnetism, and modern quantum principles with hands-on lab experiments." },
+      { id: "c2", title: "Computer Science & Artificial Intelligence", category: "science", duration: "2 Academic Years", prereq: "Basic Mathematics", icon: "fa-code", description: "Master algorithms, Python/C++ programming, data structures, database design, and foundational Machine Learning concepts." },
+      { id: "c3", title: "Business & Financial Management", category: "management", duration: "2 Academic Years", prereq: "General Mathematics", icon: "fa-chart-line", description: "Learn financial accounting, managerial economics, marketing principles, entrepreneurship, and corporate ethics." },
+      { id: "c4", title: "Liberal Arts & World Literature", category: "humanities", duration: "2 Academic Years", prereq: "English Proficiency", icon: "fa-book-open", description: "Explore global historical movements, classical literature analysis, critical philosophy, and creative writing techniques." },
+      { id: "c5", title: "Biotechnology & Organic Chemistry", category: "science", duration: "2 Academic Years", prereq: "GPA 3.2 in Biology & Chemistry", icon: "fa-dna", description: "Comprehensive laboratory research focusing on molecular biology, chemical reactions, genetics, and environmental science." },
+      { id: "c6", title: "Digital Media & Graphic Communication", category: "humanities", duration: "1 Academic Year", prereq: "Basic Visual Arts", icon: "fa-palette", description: "Hands-on experience in visual design, media literacy, digital publication, photojournalism, and UI design principles." }
+    ];
+
+    const staffData = [
+      { name: "Dr. Robert Vance", role: "Principal & Director", department: "Administration", qualification: "Ph.D. in Educational Leadership", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop" },
+      { name: "Prof. Sarah Jenkins", role: "Head of Science Department", department: "Science", qualification: "M.Sc. Physics (Stanford)", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop" },
+      { name: "Alex Rivera", role: "Senior CS Instructor", department: "Computer Science", qualification: "M.Tech in Software Engineering", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop" },
+      { name: "Dr. Eleanor Vance", role: "Humanities & Arts Lead", department: "Humanities", qualification: "Ph.D. in Comparative Literature", image: "https://images.unsplash.com/photo-1580894732413-a70d2a840b82?q=80&w=400&auto=format&fit=crop" },
+      { name: "Michael Chang", role: "Mathematics Instructor", department: "Science", qualification: "M.S. Applied Mathematics", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop" },
+      { name: "Sophia Martinez", role: "Academic Coordinator", department: "Administration", qualification: "M.Ed. Curriculum & Teaching", image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=400&auto=format&fit=crop" }
+    ];
+
+    // ---------- RENDER FUNCTIONS ----------
+    function renderNotices(filterText = '') {
+      const container = document.getElementById('notices-container');
+      container.innerHTML = '';
+      const filtered = noticesData.filter(n => 
+        n.title.toLowerCase().includes(filterText.toLowerCase()) || 
+        n.summary.toLowerCase().includes(filterText.toLowerCase()) ||
+        n.category.toLowerCase().includes(filterText.toLowerCase())
+      );
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="col-span-full text-center py-12 bg-white rounded-2xl border border-dashed border-slate-300"><i class="fa-solid fa-circle-exclamation text-3xl text-slate-400 mb-2"></i><p class="text-slate-600 font-medium">No notices found matching "${filterText}".</p></div>`;
+        return;
+      }
+      filtered.forEach(notice => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-slate-200/80 transition-all flex flex-col justify-between card-hover";
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${notice.badgeClass}">${notice.category}</span>
+              <span class="text-xs text-slate-400 font-medium"><i class="fa-regular fa-calendar-days mr-1"></i>${notice.date}</span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900 mb-2 hover:text-gold-600 transition-colors cursor-pointer" onclick="openNoticeModal(${notice.id})">${notice.title}</h3>
+            <p class="text-slate-600 text-sm line-clamp-3 leading-relaxed mb-4">${notice.summary}</p>
+          </div>
+          <button onclick="openNoticeModal(${notice.id})" class="inline-flex items-center gap-2 text-xs font-bold text-navy-900 hover:text-gold-600 transition-colors pt-2 border-t border-slate-100">
+            <span>Read Full Announcement</span> <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderCourses(category = 'all') {
+      const container = document.getElementById('courses-container');
+      container.innerHTML = '';
+      const filtered = category === 'all' ? coursesData : coursesData.filter(c => c.category === category);
+      filtered.forEach(course => {
+        const card = document.createElement('div');
+        card.className = "bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:border-gold-400/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group card-hover";
+        card.innerHTML = `
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl mb-5 group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-navy-900 transition-all shadow-md">
+              <i class="fa-solid ${course.icon}"></i>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-2 font-heading">${course.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">${course.description}</p>
+          </div>
+          <div class="space-y-2 pt-4 border-t border-slate-200/60 text-xs text-slate-500">
+            <div class="flex items-center justify-between"><span class="font-medium text-slate-700"><i class="fa-regular fa-clock mr-1 text-gold-600"></i> Duration:</span><span class="font-semibold text-slate-800">${course.duration}</span></div>
+            <div class="flex items-center justify-between"><span class="font-medium text-slate-700"><i class="fa-solid fa-list-check mr-1 text-gold-600"></i> Prerequisite:</span><span class="font-semibold text-slate-800">${course.prereq}</span></div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderStaff(dept = 'all') {
+      const container = document.getElementById('staff-container');
+      container.innerHTML = '';
+      const filtered = dept === 'all' ? staffData : staffData.filter(s => s.department === dept);
+      filtered.forEach(member => {
+        const card = document.createElement('div');
+        card.className = "bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700/60 hover:border-gold-500/50 transition-all duration-300 group shadow-lg card-hover";
+        card.innerHTML = `
+          <div class="h-56 overflow-hidden relative">
+            <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Faculty+Photo'">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 left-3 text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-md bg-gold-500 text-navy-900 shadow">${member.department}</span>
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-white group-hover:text-gold-400 transition-colors font-heading">${member.name}</h3>
+            <p class="text-xs font-semibold text-gold-400 mt-0.5">${member.role}</p>
+            <p class="text-xs text-slate-400 mt-2 flex items-center gap-1"><i class="fa-solid fa-graduation-cap text-slate-500 text-[11px]"></i><span>${member.qualification}</span></p>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // ---------- MODAL ----------
+    function openNoticeModal(id) {
+      const notice = noticesData.find(n => n.id === id);
+      if (!notice) return;
+      document.getElementById('modal-title').textContent = notice.title;
+      document.getElementById('modal-date').querySelector('span').textContent = notice.date;
+      document.getElementById('modal-tag').textContent = notice.category;
+      document.getElementById('modal-body').innerHTML = `<p>${notice.details}</p>`;
+      const modal = document.getElementById('notice-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      const modal = document.getElementById('notice-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // ---------- INIT & EVENT LISTENERS ----------
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initial renders
+      renderNotices();
+      renderCourses();
+      renderStaff();
+
+      // Mobile menu toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('fa-bars');
+        menuIcon.classList.toggle('fa-xmark');
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.add('fa-bars');
+          menuIcon.classList.remove('fa-xmark');
+        });
+      });
+
+      // Notice search
+      document.getElementById('notice-search').addEventListener('input', (e) => renderNotices(e.target.value));
+
+      // Modal close events
+      document.getElementById('close-modal').addEventListener('click', closeModal);
+      document.getElementById('modal-ok-btn').addEventListener('click', closeModal);
+      document.getElementById('notice-modal').addEventListener('click', (e) => { if (e.target.id === 'notice-modal') closeModal(); });
+
+      // Course filters
+      const courseBtns = document.querySelectorAll('.course-filter-btn');
+      courseBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          courseBtns.forEach(b => {
+            b.classList.remove('active', 'bg-navy-900', 'text-white', 'shadow-md');
+            b.classList.add('bg-slate-100', 'text-slate-600');
+          });
+          btn.classList.add('active', 'bg-navy-900', 'text-white', 'shadow-md');
+          btn.classList.remove('bg-slate-100', 'text-slate-600');
+          renderCourses(btn.dataset.category);
+        });
+      });
+
+      // Staff filters
+      const staffBtns = document.querySelectorAll('.staff-filter-btn');
+      staffBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          staffBtns.forEach(b => {
+            b.classList.remove('active', 'bg-gold-500', 'text-navy-900', 'shadow-md');
+            b.classList.add('bg-slate-800', 'text-slate-300');
+          });
+          btn.classList.add('active', 'bg-gold-500', 'text-navy-900', 'shadow-md');
+          btn.classList.remove('bg-slate-800', 'text-slate-300');
+          renderStaff(btn.dataset.dept);
+        });
+      });
+
+      // Contact form validation
+      const form = document.getElementById('contact-form');
+      const feedback = document.getElementById('form-feedback');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nameInput = document.getElementById('full-name');
+        const emailInput = document.getElementById('email');
+        const interestSelect = document.getElementById('interest');
+        const msgInput = document.getElementById('message');
+        let isValid = true;
+
+        // Name
+        if (!nameInput.value.trim()) {
+          document.getElementById('err-name').classList.remove('hidden');
+          nameInput.classList.add('border-red-500');
+          isValid = false;
+        } else {
+          document.getElementById('err-name').classList.add('hidden');
+          nameInput.classList.remove('border-red-500');
+        }
+        // Email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value.trim())) {
+          document.getElementById('err-email').classList.remove('hidden');
+          emailInput.classList.add('border-red-500');
+          isValid = false;
+        } else {
+          document.getElementById('err-email').classList.add('hidden');
+          emailInput.classList.remove('border-red-500');
+        }
+        // Interest
+        if (!interestSelect.value) {
+          document.getElementById('err-interest').classList.remove('hidden');
+          interestSelect.classList.add('border-red-500');
+          isValid = false;
+        } else {
+          document.getElementById('err-interest').classList.add('hidden');
+          interestSelect.classList.remove('border-red-500');
+        }
+        // Message
+        if (msgInput.value.trim().length < 10) {
+          document.getElementById('err-message').classList.remove('hidden');
+          msgInput.classList.add('border-red-500');
+          isValid = false;
+        } else {
+          document.getElementById('err-message').classList.add('hidden');
+          msgInput.classList.remove('border-red-500');
+        }
+
+        if (isValid) {
+          feedback.className = "mb-6 p-4 rounded-xl text-sm font-medium bg-emerald-100 text-emerald-800 border border-emerald-200 block";
+          feedback.innerHTML = `<i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your inquiry has been submitted successfully. Our team will contact you shortly.`;
+          form.reset();
+          setTimeout(() => feedback.classList.add('hidden'), 6000);
+        } else {
+          feedback.className = "mb-6 p-4 rounded-xl text-sm font-medium bg-red-100 text-red-800 border border-red-200 block";
+          feedback.innerHTML = `<i class="fa-solid fa-triangle-exclamation mr-2"></i> Please correct the highlighted errors above.`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
